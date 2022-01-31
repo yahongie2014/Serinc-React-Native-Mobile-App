@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "452080621011",
+    "firebase_url": "https://serinc-bd51b.firebaseio.com",
+    "project_id": "serinc-bd51b",
+    "storage_bucket": "serinc-bd51b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452080621011:android:38e165c08b924f84c88b26",
+        "android_client_info": {
+          "package_name": "com.serinc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "452080621011-n7erqlmi1c95i9mukf41q34rasm0fq93.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkDqBmtI_9m6Xqj0Q1rIr9gl3hAMR5BeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "452080621011-n7erqlmi1c95i9mukf41q34rasm0fq93.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
