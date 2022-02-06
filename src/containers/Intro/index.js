@@ -70,7 +70,7 @@ class Intro extends PureComponent {
     this.animations = new Map();
   }
   componentDidMount() {
-    AsyncStorage.getItem('first_time').then((value) => {
+    AsyncStorage.getItem('first_time').then(value => {
       this.setState({showRealApp: !!value, loading: false});
     });
   }
@@ -79,11 +79,11 @@ class Intro extends PureComponent {
     await AsyncStorage.setItem('isRTL', JSON.stringify(0));
   }
 
-  onScroll = (event) => {
+  onScroll = event => {
     const {contentOffset} = event.nativeEvent;
     const currentIndex = Math.round(contentOffset.x / deviceWidth);
     if (this.state.currentIndex !== currentIndex) {
-      this.animations.forEach((animation) => {
+      this.animations.forEach(animation => {
         animation.reset();
       });
       this.animations.get(currentIndex).play();
@@ -91,7 +91,7 @@ class Intro extends PureComponent {
     }
   };
 
-  scrollTo = (index) => {
+  scrollTo = index => {
     this.scrollView._component.scrollTo({
       x: deviceWidth * index,
       animated: true,
@@ -110,13 +110,13 @@ class Intro extends PureComponent {
       <SafeAreaView style={styles.container}>
         <StatusBar backgroundColor="#2c3e50" barStyle="light-content" />
         <GradientBackgrounds
-          colors={pages.map((page) => page.backgroundColor)}
+          colors={pages.map(page => page.backgroundColor)}
           scrollX={this.scrollX}
           style={{height: '56%'}}
         />
         <Animated.ScrollView
           horizontal
-          ref={(scrollView) => {
+          ref={scrollView => {
             this.scrollView = scrollView;
           }}
           showsHorizontalScrollIndicator={false}
@@ -135,7 +135,7 @@ class Intro extends PureComponent {
               ]}>
               <Header style={{backgroundColor: 'transparent'}}>
                 <LottieView
-                  ref={(animation) => {
+                  ref={animation => {
                     if (animation) {
                       this.animations.set(index, animation);
                     }

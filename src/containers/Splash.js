@@ -1,15 +1,8 @@
 import React, {Component} from 'react';
-import {
-  StyleSheet,
-  AsyncStorage,
-  Animated,
-  Dimensions,
-  TouchableHighlight,
-} from 'react-native';
+import {StyleSheet, AsyncStorage, Animated, Dimensions} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {Actions} from 'react-native-router-flux';
 import {connect} from 'react-redux';
-import Wave from 'react-native-waveview';
 
 const {width} = Dimensions.get('window');
 class Intro extends Component {

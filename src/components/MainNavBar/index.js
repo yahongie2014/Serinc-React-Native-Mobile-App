@@ -49,7 +49,7 @@ class MainNavBar extends Component {
           '&phone=20' +
           this.state.mobileNo;
         Linking.openURL(url)
-          .then((data) => {
+          .then(data => {
             console.log('WhatsApp Opened successfully ' + data);
           })
           .catch(() => {
@@ -122,7 +122,7 @@ class MainNavBar extends Component {
               }>
               <Icon name="file-pdf-o" size={25} color="#fff" />
             </MenuItem>
-            <MenuItem onPress={() => Linking.openURL('https://serinc.online/')}>
+            <MenuItem onPress={() => Linking.openURL('https://serinc.tech/')}>
               <Icon name="globe" size={25} color="#fff" />
             </MenuItem>
           </Menu>

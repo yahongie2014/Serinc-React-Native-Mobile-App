@@ -1,13 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Router from './src/actions/Router';
-import {
-  StyleSheet,
-  SafeAreaView,
-  View,
-  StatusBar,
-  UIManager,
-} from 'react-native';
+import {StyleSheet, SafeAreaView, View, StatusBar} from 'react-native';
 import {RegisterUser} from './src/actions/action';
 import {PERMISSIONS, requestMultiple} from 'react-native-permissions';
 
