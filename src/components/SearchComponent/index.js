@@ -5,8 +5,11 @@ import {
   TextInput,
   StyleSheet,
 } from 'react-native';
-import {Events} from '../../common';
 import {debounce} from 'lodash';
+import EventEmitter from '../../redux/AppEventEmitter';
+
+const onOpenSearchModal = func =>
+  EventEmitter.addListener('modal.search.open', func);
 
 class SearchBar extends PureComponent {
   constructor(props) {
@@ -14,7 +17,7 @@ class SearchBar extends PureComponent {
     this.state = {};
   }
 
-  _onSearch = debounce((searchText) => {
+  _onSearch = debounce(searchText => {
     if (searchText.trim().length > 2) {
       this.props.onSearch(this.props.isMap, searchText);
     } else {
@@ -24,7 +27,7 @@ class SearchBar extends PureComponent {
 
   _onFilter = () => {
     let isMap = this.props.isMap;
-    Events.openSearchModal(isMap);
+    onOpenSearchModal(isMap);
   };
 
   render() {
