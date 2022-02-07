@@ -11,7 +11,7 @@ class MainNavBar extends Component {
     super(props);
     this.state = {
       active: false,
-      menuOpened: true,
+      menuOpened: false,
       // mobileNo: '01096187357',
       mobileNo: '01091950488',
       message: 'I want Make a Deal ?',
@@ -66,7 +66,6 @@ class MainNavBar extends Component {
 
   render() {
     const {active} = this.state;
-    const navigation = this.props.navigation;
 
     return (
       <>
@@ -185,6 +184,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   sidemenu: {
+    flex: 1,
     flexDirection: 'row',
     marginTop: 42,
   },

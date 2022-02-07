@@ -36,9 +36,9 @@ class Home extends PureComponent {
     };
   }
   async componentDidMount() {
-    const phoneNumber = DeviceInfo.getPhoneNumberSync();
+    const phoneNumber = DeviceInfo.getPhoneNumber();
     if (phoneNumber != 'unknown') {
-      this.props.registerUser(phoneNumber);
+      this.props.registerUser();
       this.setState({userphone: phoneNumber});
     } else {
       this.props.registerUser(bundleId);

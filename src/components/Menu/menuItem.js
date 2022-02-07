@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {transformOrigin, rotateY} from './utils/martixUtils';
-import {withAnchorPoint} from 'react-native-anchor-point';
 import {
   View,
-  Dimensions,
   StyleSheet,
   Animated,
   TouchableNativeFeedback,
 } from 'react-native';
-const window = Dimensions.get('window');
+
 export default class MenuItem extends Component {
   static propTypes = {
     onPress: PropTypes.func,
@@ -59,7 +57,6 @@ export default class MenuItem extends Component {
         parseInt(0.1 * this.containerWidth);
       const origin = {x: xOffest, y: 0, z: 0};
       let matrix = rotateY(y);
-      //transformOrigin,withAnchorPoint
       transformOrigin(matrix, origin);
 
       this.menuItem.setNativeProps({
@@ -86,7 +83,7 @@ export default class MenuItem extends Component {
             borderBottomColor: this.props.activeItemColorDark,
           },
         ]}
-        ref={(component) => (this.menuItem = component)}
+        ref={component => (this.menuItem = component)}
         onLayout={this.onLayout}>
         <TouchableNativeFeedback onPress={this.onPress}>
           <View

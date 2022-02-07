@@ -127,7 +127,7 @@ export function getAsyncStorage(key) {
     console.log(error);
   }
 }
-export const FBTOKEN = (status) => {
+export const FBTOKEN = status => {
   return AsyncStorage.get('TokenFirebase');
 };
 
@@ -145,7 +145,7 @@ export function LoadingState(loading) {
   };
 }
 export function ChangeLoadingState(loading) {
-  return (dispatch) => {
+  return dispatch => {
     dispatch(LoadingState(loading));
   };
 }
@@ -188,14 +188,16 @@ export function ErrorContact(data) {
 //Main Function Screens
 
 export function RegisterUser(phone) {
-  return (dispatch) => {
+  return dispatch => {
     PushNotification.configure({
+      popInitialNotification: true,
+      requestPermissions: true,
       onRegister: function (fbtoken) {
         Axios.post(Routes.RegisterUser, {
           password: 123456,
           phone: phone,
           firebase_token: fbtoken.token,
-        }).then(async (response) => {
+        }).then(async response => {
           if (response.status === 200) {
             dispatch(
               LoginSuccess(
@@ -237,9 +239,9 @@ export function sendContact(name, email, phone, info, service_id) {
     cat_id: service_id,
   };
 
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch(pendingcontact());
-    Axios.post(Routes.ContactStore, data, Options).then((response) => {
+    Axios.post(Routes.ContactStore, data, Options).then(response => {
       if (response.status == 200) {
         dispatch(SuccessContact(response.data.data));
       } else {
@@ -254,10 +256,10 @@ export function sendContact(name, email, phone, info, service_id) {
 }
 
 export function SliderImages() {
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch(fetchSliderPending());
     let url = Routes.Sliders;
-    Axios.get(url).then((response) => {
+    Axios.get(url).then(response => {
       dispatch(getSlider(response.data.data));
     });
     try {
@@ -273,9 +275,9 @@ export function getNotifications(Auth) {
       Authorization: `Bearer ${Auth}`,
     },
   };
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch(fetchNotifyPending());
-    Axios.get(Routes.Notification, Options).then((response) => {
+    Axios.get(Routes.Notification, Options).then(response => {
       dispatch(fetchNotify(response.data.data));
     });
     try {
@@ -291,7 +293,7 @@ export function updateSeen(id, Auth) {
       Authorization: `Bearer ${Auth}`,
     },
   };
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch(fetchsubmitpendingSeen());
     Axios.post(
       Routes.NotificationSeen,
@@ -299,7 +301,7 @@ export function updateSeen(id, Auth) {
         id: id,
       },
       Options,
-    ).then(async (response) => {
+    ).then(async response => {
       dispatch(fetchsubmitSeen());
       dispatch(fetchNotify(response.data.data));
     });
@@ -316,9 +318,9 @@ export function getCategories() {
       Accept: 'application/json',
     },
   };
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch(fetchCategoryPending());
-    Axios.get(Routes.Categories, Options).then((response) => {
+    Axios.get(Routes.Categories, Options).then(response => {
       dispatch(fetchCategories(response.data.data));
     });
     try {
@@ -334,9 +336,9 @@ export function getSingleCategory(id) {
       Accept: 'application/json',
     },
   };
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch(fetchSingleServicepending());
-    Axios.get(Routes.ServiceCategory(id), Options).then((response) => {
+    Axios.get(Routes.ServiceCategory(id), Options).then(response => {
       dispatch(fetchSingleService(response.data.data[0]));
     });
     try {
@@ -352,9 +354,9 @@ export function getBlogs() {
       Accept: 'application/json',
     },
   };
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch(pendingBlogs());
-    Axios.get(Routes.Blogs, Options).then((response) => {
+    Axios.get(Routes.Blogs, Options).then(response => {
       dispatch(fetchBlogs(response.data.data));
     });
     try {
@@ -370,9 +372,9 @@ export function getSingleBlog(id) {
       Accept: 'application/json',
     },
   };
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch(pendingBlogs());
-    Axios.get(Routes.SingleBlog(id), Options).then((response) => {
+    Axios.get(Routes.SingleBlog(id), Options).then(response => {
       dispatch(fetchBlogs(response.data.data));
     });
     try {
@@ -388,9 +390,9 @@ export function getSingleProject(id) {
       Accept: 'application/json',
     },
   };
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch(pendingSingleProject());
-    Axios.get(Routes.SingleProject(id), Options).then((response) => {
+    Axios.get(Routes.SingleProject(id), Options).then(response => {
       dispatch(fetchSingleProject(response.data.data[0]));
     });
     try {
@@ -403,12 +405,12 @@ export function getSingleProject(id) {
 export const searchPosts = (searchText, limit) => {};
 
 export const clearSearchPosts = () => {
-  return (dispatch) => {
+  return dispatch => {
     dispatch({type: CLEAR_SEARCH_POSTS});
   };
 };
 export const stopSearchPosts = () => {
-  return (dispatch) => {
+  return dispatch => {
     dispatch({type: SEARCH_POSTS_STOPPED});
   };
 };

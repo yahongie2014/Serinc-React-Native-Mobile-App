@@ -93,7 +93,7 @@ class SingleProject extends Component {
             </Text>
           </View>
           <View style={styles.txtarea}>
-            <Text>{listpro.ProjectDescription.replace(regex, '')}</Text>
+            <Text>{listpro.ProjectDescription}</Text>
           </View>
           <View style={styles.tags}>
             <Text style={styles.tagrx}>

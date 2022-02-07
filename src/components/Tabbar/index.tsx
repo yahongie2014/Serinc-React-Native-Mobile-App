@@ -18,7 +18,7 @@ const tabs = [
   {name: 'home', screen: 'home', color: '#3498db'},
   {name: 'connectdevelop', screen: 'services', color: '#ff3f34'},
   {name: 'podcast', screen: 'notifications', color: '#ef5777'},
-  {name: 'ioxhost', screen: 'portfolio', color: '#575fcf'},
+  {name: 'ioxhost', screen: 'contact', color: '#575fcf'},
 ];
 const tabWidth = width / tabs.length;
 const getPath = (): string => {

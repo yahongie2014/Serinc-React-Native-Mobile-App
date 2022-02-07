@@ -15,13 +15,21 @@
       },
       "oauth_client": [
         {
+          "client_id": "452080621011-ae6mps1vmouopgn6orgo1687cfuhgu1t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.serinc",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
           "client_id": "452080621011-n7erqlmi1c95i9mukf41q34rasm0fq93.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCkDqBmtI_9m6Xqj0Q1rIr9gl3hAMR5BeY"
+          "current_key": "AIzaSyCsBrHk9GUKvtaoc1caSxjJ3P0TUgozLKU"
         }
       ],
       "services": {

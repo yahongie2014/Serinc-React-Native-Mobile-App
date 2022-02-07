@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Animated, Easing, Text} from 'react-native';
+import {View, StyleSheet, Easing} from 'react-native';
 import {shadeColor} from './utils/colorUtils';
 import PropTypes from 'prop-types';
 export default class Menu extends React.Component {
@@ -147,7 +147,7 @@ export default class Menu extends React.Component {
         roundAll:
           this.props.itemsDistribution === 'space-between' ||
           this.props.itemsDistribution == 'space-around',
-        onItemPress: (child) => this.onItemPress('item' + index),
+        onItemPress: child => this.onItemPress('item' + index),
 
         isOpened: this.props.isOpened,
         borderRadius: this.props.borderRadius,
@@ -164,7 +164,7 @@ export default class Menu extends React.Component {
     return (
       <View
         style={[styles.menu, this.computeStyle()]}
-        ref={(component) => (this.menu = component)}>
+        ref={component => (this.menu = component)}>
         {this.children}
       </View>
     );

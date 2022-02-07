@@ -13,8 +13,8 @@ public class MainActivity extends ReactActivity {
     return "serinc";
   }
   @Override
-protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(null);
-}
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+    }
 
 }

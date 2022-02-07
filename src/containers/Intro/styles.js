@@ -50,7 +50,7 @@ export default StyleSheet.create({
     borderTopWidth: 1,
     borderColor: 'white',
     backgroundColor: 'white',
-    height: 40,
+    height: 60,
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 10,
