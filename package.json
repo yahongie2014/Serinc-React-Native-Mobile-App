@@ -45,7 +45,7 @@
     "react-native-permissions": "^3.0.5",
     "react-native-push-notification": "^8.0.0",
     "react-native-really-awesome-button": "^1.6.0",
-    "react-native-reanimated": "^2.4.0",
+    "react-native-reanimated": "^1.13.1",
     "react-native-render-html": "^6.0.5",
     "react-native-responsive-screen": "^1.4.2",
     "react-native-router-flux": "^4.3.1",
