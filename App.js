@@ -13,7 +13,10 @@ class App extends Component {
     };
   }
   async componentDidMount() {
-    requestMultiple([PERMISSIONS.ANDROID.READ_PHONE_STATE]).then(statuses => {
+    requestMultiple(
+      [PERMISSIONS.ANDROID.READ_PHONE_STATE],
+      [PERMISSIONS.ANDROID.READ_PHONE_NUMBERS],
+    ).then(statuses => {
       console.log(
         'PhoneStatus',
         statuses[PERMISSIONS.ANDROID.READ_PHONE_STATE],

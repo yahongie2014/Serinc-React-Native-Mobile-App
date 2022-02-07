@@ -5,6 +5,7 @@ import {
   Stack,
   ActionConst,
   Tabs,
+  Actions,
 } from 'react-native-router-flux';
 import Home from '../containers/Home';
 import Notifications from '../containers/Notifications';
@@ -20,8 +21,15 @@ import SingleBlog from '../containers/SingleBlog';
 import SingleService from '../containers/SingleService';
 
 const stateHandler = (prevState, newState, action) => {};
+const onBackAndroid = () => {
+  return Actions.pop();
+};
+
 const RouterNav = () => (
-  <Router onStateChange={stateHandler} navBar={MainNavBar}>
+  <Router
+    backAndroidHandler={onBackAndroid}
+    onStateChange={stateHandler}
+    navBar={MainNavBar}>
     <Tabs key="tabBar" type={ActionConst.RESET} tabBarComponent={Tabbar}>
       <Stack key="Main">
         <Scene
