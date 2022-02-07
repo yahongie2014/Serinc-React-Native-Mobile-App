@@ -1,4 +1,6 @@
 package com.serinc;
+import com.facebook.react.bridge.JSIModulePackage;
+import com.swmansion.reanimated.ReanimatedJSIModulePackage;
 
 import android.app.Application;
 import android.content.Context;
@@ -35,6 +37,11 @@ public class MainApplication extends Application implements ReactApplication {
         protected String getJSMainModuleName() {
           return "index";
         }
+        @Override 
+        protected JSIModulePackage getJSIModulePackage() {
+           return new ReanimatedJSIModulePackage(); 
+           }
+
       };
 
   @Override
@@ -48,6 +55,7 @@ public class MainApplication extends Application implements ReactApplication {
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }
+
 
   /**
    * Loads Flipper in React Native templates. Call this in the onCreate method with something like

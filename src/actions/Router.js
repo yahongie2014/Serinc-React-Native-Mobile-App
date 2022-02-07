@@ -18,6 +18,7 @@ import MainNavBar from '../components/MainNavBar';
 import SingleProject from '../containers/SingleProject';
 import SingleBlog from '../containers/SingleBlog';
 import SingleService from '../containers/SingleService';
+
 const stateHandler = (prevState, newState, action) => {};
 const RouterNav = () => (
   <Router onStateChange={stateHandler} navBar={MainNavBar}>
