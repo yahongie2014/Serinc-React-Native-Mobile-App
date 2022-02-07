@@ -36,7 +36,7 @@ class StaticTabbar extends Component<Props> {
     const {value, tabs} = this.props;
     const tabWidth = width / tabs.length;
     Animated.sequence([
-      ...this.values.map((value) =>
+      ...this.values.map(value =>
         Animated.timing(value, {
           toValue: 0,
           duration: 100,
