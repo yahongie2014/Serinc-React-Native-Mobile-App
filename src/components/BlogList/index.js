@@ -73,7 +73,7 @@ class BlogList extends Component {
             </Text>
           </View>
           <View style={styles.txtarea}>
-            <Text h5>{item.Body.replace(regex, '').split('', 100)}...</Text>
+            <Text>{item.Body.replace(regex, '').split('', 100)}...</Text>
           </View>
           <View style={styles.viewer}>
             <Text tyle={styles.txtview}>{item.Visits}</Text>

@@ -21,14 +21,13 @@ import {
   Placeholder,
 } from 'react-native-loading-placeholder';
 import LinearGradient from 'react-native-linear-gradient';
-import HTML from 'react-native-render-html';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {Actions} from 'react-native-router-flux';
 import AwesomeButton from 'react-native-really-awesome-button';
 import HeartReact from '../../components/HeartReact';
 import Lightbox from 'react-native-lightbox';
-
+import {BASEURL} from '../../config/api/routes';
 class SingleProject extends Component {
   constructor(props) {
     super(props);
@@ -59,6 +58,8 @@ class SingleProject extends Component {
     const {listpro, pending} = this.props;
     const Gallery = listpro.Gallery;
     const contentWidth = Dimensions.width / 3;
+    const regex = /(<([^>]+)>)/gi;
+
     return (
       <SafeAreaView style={styles.container}>
         <TouchableOpacity onPress={() => Actions.home({type: 'reset'})}>
@@ -92,10 +93,7 @@ class SingleProject extends Component {
             </Text>
           </View>
           <View style={styles.txtarea}>
-            <HTML
-              html={listpro.ProjectDescription}
-              contentWidth={contentWidth}
-            />
+            <Text>{listpro.ProjectDescription.replace(regex, '')}</Text>
           </View>
           <View style={styles.tags}>
             <Text style={styles.tagrx}>
@@ -115,7 +113,7 @@ class SingleProject extends Component {
               ]}
               maxNumberOfTags={5}
               containerStyle={{justifyContent: 'flex-start'}}
-              onChangeTags={(tags) => console.log(tags)}
+              onChangeTags={tags => console.log(tags)}
               onTagPress={(index, tagLabel) =>
                 Linking.openURL(
                   `https://www.google.com/search?query=${tagLabel}`,
@@ -178,10 +176,8 @@ class SingleProject extends Component {
                 imageKey={'url'}
                 height={200}
                 timer={3000}
-                onPress={(item) =>
-                  console.log(
-                    JSON.stringify(`https://serinc.online${item.url}`),
-                  )
+                onPress={item =>
+                  console.log(JSON.stringify(`${BASEURL + item.url}`))
                 }
                 component={<SingleSliderProject />}
                 contentContainerStyle={{paddingHorizontal: 1}}
@@ -267,7 +263,7 @@ const Gradient = () => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     listpro: state.SingleProject.single,
     pending: state.SingleProject.pending,
@@ -275,9 +271,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    fetchSingle: (id) => dispatch(getSingleProject(id)),
+    fetchSingle: id => dispatch(getSingleProject(id)),
   };
 };
 

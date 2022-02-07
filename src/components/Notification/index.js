@@ -17,12 +17,13 @@ import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AwesomeAlert from 'react-native-awesome-alerts';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-
+import {BASEURL} from '../../config/api/routes';
 import {
   PlaceholderContainer,
   Placeholder,
 } from 'react-native-loading-placeholder';
 const regex = /(<([^>]+)>)/gi;
+const icon = `${BASEURL}storage/icons/bell.png`;
 
 class Notifications extends Component {
   constructor(props) {
@@ -65,7 +66,7 @@ class Notifications extends Component {
         <ListItem
           leftAvatar={{
             source: {
-              uri: 'https://serinc.online/storage/icons/bell.png',
+              uri: icon,
             },
           }}
         />
@@ -255,7 +256,7 @@ const Gradient = () => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     NotifList: state.Notification.notifications,
     token: state.auth.accessToken,
@@ -264,9 +265,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    fetchNotify: (userToken) => dispatch(getNotifications(userToken)),
+    fetchNotify: userToken => dispatch(getNotifications(userToken)),
     updateSeen: (id, userToken) => dispatch(updateSeen(id, userToken)),
   };
 };

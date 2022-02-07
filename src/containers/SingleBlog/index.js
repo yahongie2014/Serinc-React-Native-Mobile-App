@@ -27,9 +27,9 @@ import HeartReact from '../../components/HeartReact';
 import AwesomeAlert from 'react-native-awesome-alerts';
 import Lightbox from 'react-native-lightbox';
 import ReactNativeDisqus from 'react-native-disqus';
-
+import {BASEURL} from '../../config/api/routes';
 const regex = /(<([^>]+)>)/gi;
-const avatarBot = 'https://serinc.online/logo2.png';
+const avatarBot = `${BASEURL}logo2.png`;
 
 class SingleBlog extends Component {
   constructor(props) {
@@ -50,7 +50,6 @@ class SingleBlog extends Component {
   async componentDidMount() {
     this.props.fetchBlogs(this.props.id);
   }
-  componentWillMount() {}
 
   onRefresh() {
     this.setState({isFetching: true}, () => {
@@ -203,7 +202,7 @@ class SingleBlog extends Component {
               <TouchableOpacity
                 onPress={() =>
                   Linking.openURL(
-                    `http://www.facebook.com/share.php?u=https://serinc.online/blog/${SingleBlog[0].Identifier}`,
+                    `http://www.facebook.com/share.php?u=https://serinc.tech/blog/${SingleBlog[0].Identifier}`,
                   )
                 }>
                 <Icon
@@ -256,14 +255,14 @@ class SingleBlog extends Component {
               />
             )}
           </View>
-          <View style={styles.footer}>
+          {/* <View style={styles.footer}>
             <SafeAreaView style={{flex: 1}}>
               <ReactNativeDisqus
                 id={SingleBlog[0].Identifier}
                 shortname="serinc-online"
               />
             </SafeAreaView>
-          </View>
+          </View> */}
         </ScrollView>
       </SafeAreaView>
     );

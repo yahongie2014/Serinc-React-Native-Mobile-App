@@ -12,7 +12,8 @@ class MainNavBar extends Component {
     this.state = {
       active: false,
       menuOpened: true,
-      mobileNo: '01096187357',
+      // mobileNo: '01096187357',
+      mobileNo: '01091950488',
       message: 'I want Make a Deal ?',
     };
     this.onBtnPress = this.onBtnPress.bind(this);

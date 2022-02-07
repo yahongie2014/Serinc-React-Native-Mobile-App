@@ -1,4 +1,6 @@
 const mainRoute = 'https://seribackend.herokuapp.com/api';
+export const BASEURL = 'https://seribackend.herokuapp.com/';
+export const STORAGE = 'https://seribackend.herokuapp.com/storage/';
 
 export default Routes = {
   RegisterUser: `${mainRoute}/createAuth`,

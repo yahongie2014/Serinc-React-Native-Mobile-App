@@ -10,10 +10,12 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 import {GiftedChat} from 'react-native-gifted-chat';
+import {BASEURL} from '../../config/api/routes';
 
 let window = Dimensions.get('window');
 const contentHeight = window.height - 150;
-const avatarBot = 'https://serinc.online/logo2.png';
+
+const avatarBot = `${BASEURL}logo2.png`;
 
 class Portfolio extends Component {
   constructor(props) {
@@ -147,7 +149,7 @@ class Portfolio extends Component {
   renderChat = () => {
     return (
       <GiftedChat
-        textInputProps={{autoFocus: false}}
+        textInputProps={{autoFocus: true}}
         messages={this.state.gifted}
         placeholder="Ask me anything..."
         onSend={messages => this.onSend(messages)}

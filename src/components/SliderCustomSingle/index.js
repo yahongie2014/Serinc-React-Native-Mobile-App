@@ -7,6 +7,8 @@ import {
   StyleSheet,
   Platform,
 } from 'react-native';
+import {STORAGE} from '../../config/api/routes';
+
 export default SliderCustomSingle = ({
   style,
   item,
@@ -23,7 +25,7 @@ export default SliderCustomSingle = ({
       <View style={[styles.imageContainer, styles.shadow]}>
         <Image
           style={[styles.videoPreview, active ? {} : {height: 120}]}
-          source={{uri: `https://serinc.online/${item[imageKey]}`}}
+          source={{uri: STORAGE + `${item[imageKey]}`}}
         />
       </View>
     </TouchableOpacity>
