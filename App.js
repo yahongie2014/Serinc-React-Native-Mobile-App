@@ -5,6 +5,7 @@ import {StyleSheet, SafeAreaView, View, StatusBar} from 'react-native';
 import {RegisterUser} from './src/actions/action';
 import {PERMISSIONS, requestMultiple} from 'react-native-permissions';
 import 'react-native-gesture-handler';
+import '@config/firebase';
 
 class App extends Component {
   constructor(props) {

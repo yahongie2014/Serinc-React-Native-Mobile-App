@@ -4,16 +4,19 @@ import {AsyncStorage} from 'react-native';
 PushNotification.configure({
   popInitialNotification: true,
   requestPermissions: true,
+  playSound: true,
   onRegister: function (fbtoken) {
     AsyncStorage.setItem('TokenFirebase', fbtoken);
     console.log('Just InCase:', fbtoken);
   },
   onNotification: function (notification) {
     const {data} = notification;
-    log('Notification: ' + data);
   },
   senderID: '452080621011',
   popInitialNotification: true,
   requestPermissions: true,
+  playSound: true,
 });
 const token = PushNotification.onRegister();
+
+export default {token};

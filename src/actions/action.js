@@ -190,8 +190,6 @@ export function ErrorContact(data) {
 export function RegisterUser(phone) {
   return dispatch => {
     PushNotification.configure({
-      popInitialNotification: true,
-      requestPermissions: true,
       onRegister: function (fbtoken) {
         Axios.post(Routes.RegisterUser, {
           password: 123456,
