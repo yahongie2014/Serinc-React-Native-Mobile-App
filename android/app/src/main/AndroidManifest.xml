@@ -18,7 +18,7 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
       tools:replace="android:allowBackup"
-      android:usesCleartextTraffic="true"
+        android:usesCleartextTraffic="true"
       android:theme="@style/AppTheme">
       <meta-data  android:name="com.google.android.geo.API_KEY"
         android:value="AIzaSyBxd-Sk--b4Lufoifww7gCP-1Zxdpbz_Ck"/>
@@ -26,6 +26,7 @@
                     android:value="true"/>
         <meta-data  android:name="com.dieam.reactnativepushnotification.notification_color"
                     android:resource="@color/white"/>
+      <meta-data android:name="expo.modules.updates.EXPO_UPDATE_URL" android:value="https://url-to.update" />
         <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationActions" />
         <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationPublisher" />
         <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationBootEventReceiver">
