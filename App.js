@@ -17,7 +17,6 @@ class App extends Component {
     requestMultiple(
       [PERMISSIONS.ANDROID.READ_PHONE_STATE],
       [PERMISSIONS.ANDROID.READ_PHONE_NUMBERS],
-      [PERMISSIONS.ANDROID.WRITE_CONTACTS],
     ).then(statuses => {
       console.log(
         'PhoneStatus',
