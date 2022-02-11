@@ -28,6 +28,7 @@ import AwesomeButton from 'react-native-really-awesome-button';
 import HeartReact from '../../components/HeartReact';
 import Lightbox from 'react-native-lightbox';
 import {BASEURL} from '../../config/api/routes';
+
 class SingleProject extends Component {
   constructor(props) {
     super(props);
@@ -57,7 +58,6 @@ class SingleProject extends Component {
   render() {
     const {listpro, pending} = this.props;
     const Gallery = listpro.Gallery;
-    const contentWidth = Dimensions.width / 3;
     const regex = /(<([^>]+)>)/gi;
 
     return (

@@ -124,12 +124,9 @@ export default StyleSheet.create({
   },
   txtarea: {
     color: '#eeeeee',
-    flex: 1,
-    padding: 20,
+    padding: 6,
     justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'row-reverse',
-    flexWrap: 'wrap',
   },
   headtitle: {
     flexDirection: 'row',

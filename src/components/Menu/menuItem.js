@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {transformOrigin, rotateY} from './utils/martixUtils';
-import {
-  View,
-  StyleSheet,
-  Animated,
-  TouchableNativeFeedback,
-} from 'react-native';
+import {View, StyleSheet, Animated} from 'react-native';
+import {TouchableNativeFeedback} from 'react-native-gesture-handler';
 
 export default class MenuItem extends Component {
   static propTypes = {
@@ -85,7 +81,7 @@ export default class MenuItem extends Component {
         ]}
         ref={component => (this.menuItem = component)}
         onLayout={this.onLayout}>
-        <TouchableNativeFeedback onPress={this.onPress}>
+        <TouchableNativeFeedback onPress={() => this.onPress()}>
           <View
             style={[
               styles.box,

@@ -66,7 +66,6 @@ class MainNavBar extends Component {
 
   render() {
     const {active} = this.state;
-
     return (
       <>
         <View style={styles.sidemenu}>

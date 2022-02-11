@@ -26,7 +26,6 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import HeartReact from '../../components/HeartReact';
 import AwesomeAlert from 'react-native-awesome-alerts';
 import Lightbox from 'react-native-lightbox';
-import ReactNativeDisqus from 'react-native-disqus';
 import {BASEURL} from '../../config/api/routes';
 const regex = /(<([^>]+)>)/gi;
 const avatarBot = `${BASEURL}logo2.png`;

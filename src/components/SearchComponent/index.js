@@ -4,6 +4,7 @@ import {
   Platform,
   TextInput,
   StyleSheet,
+  Linking,
 } from 'react-native';
 import {debounce} from 'lodash';
 import EventEmitter from '../../redux/AppEventEmitter';
@@ -14,12 +15,14 @@ const onOpenSearchModal = func =>
 class SearchBar extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      searchKey: '',
+    };
   }
 
   _onSearch = debounce(searchText => {
     if (searchText.trim().length > 2) {
-      this.props.onSearch(this.props.isMap, searchText);
+      Linking.openURL(`https://www.google.com/search?query=${searchText}`);
     } else {
       this.props.stopSearch();
     }
@@ -95,7 +98,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#eee',
     borderRadius: 40,
-
+    color: 'black',
     ...Platform.select({
       ios: {
         marginTop: 15,

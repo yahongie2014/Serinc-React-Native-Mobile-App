@@ -8,7 +8,7 @@ import {
   RefreshControl,
   SafeAreaView,
   ScrollView,
-  Dimensions,
+  Image,
 } from 'react-native';
 import {getNotifications, updateSeen} from '../../actions/action';
 import {ListItem, Text} from 'react-native-elements';
@@ -17,13 +17,13 @@ import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AwesomeAlert from 'react-native-awesome-alerts';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {BASEURL} from '../../config/api/routes';
+import {STORAGE} from '../../config/api/routes';
 import {
   PlaceholderContainer,
   Placeholder,
 } from 'react-native-loading-placeholder';
 const regex = /(<([^>]+)>)/gi;
-const icon = `${BASEURL}storage/icons/bell.png`;
+const icon = `${STORAGE}storage/icons/bell.png`;
 
 class Notifications extends Component {
   constructor(props) {
@@ -69,6 +69,10 @@ class Notifications extends Component {
               uri: icon,
             },
           }}
+        />
+        <Image
+          source={require('@assets/images/bell.png')}
+          style={{height: 50, width: 50, alignSelf: 'flex-start'}}
         />
         <View
           style={{

@@ -22,7 +22,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const regex = /(<([^>]+)>)/gi;
-const avatarBot = 'https://serinc.online/logo2.png';
 
 class BlogList extends Component {
   constructor(props) {

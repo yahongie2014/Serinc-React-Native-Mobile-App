@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import {View, Text, Linking} from 'react-native';
+import {View, Text} from 'react-native';
 import styles from './styles';
 import {connect} from 'react-redux';
 import {
@@ -24,6 +24,8 @@ import {
 } from 'react-native-loading-placeholder';
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import SmsRetriever from 'react-native-sms-retriever';
+
 let bundleId = DeviceInfo.getUniqueId();
 
 class Home extends PureComponent {
@@ -31,29 +33,24 @@ class Home extends PureComponent {
     super(props);
     this.state = {
       isLoading: true,
+      searchKey: '',
       sliders: [],
       userphone: [],
     };
   }
   async componentDidMount() {
-    // const phoneNumber = DeviceInfo.getPhoneNumber();
-    DeviceInfo.getPhoneNumber().then(phoneNumber => {
-      if (phoneNumber != 'unknown') {
-        this.props.registerUser();
-        this.setState({userphone: phoneNumber});
-      } else {
-        this.props.registerUser(bundleId);
-        this.setState({userphone: bundleId});
-      }
-    });
+    try {
+      const phoneNumber = await SmsRetriever.requestPhoneNumber();
+      this.props.registerUser(phoneNumber);
+      this.setState({userphone: phoneNumber});
+    } catch (error) {
+      this.props.registerUser(bundleId);
+      this.setState({userphone: bundleId});
+    }
   }
 
   static defaultProps = {
     listSearch: [],
-  };
-
-  _onSearch = searchText => {
-    Linking.openURL(`https://www.google.com/search?query=${searchText}`);
   };
 
   _stopSearch = () => {
@@ -66,15 +63,13 @@ class Home extends PureComponent {
   };
 
   render() {
-    const {onViewMap} = this.state;
     const {sliderList, pending} = this.props;
     return (
       <View style={styles.container}>
         <View style={styles.search}>
           <SearchComponent
             stopSearch={this._stopSearch}
-            onSwitchView={onViewMap}
-            onSearch={this._onSearch}
+            onSearch={searchKey => this.setState({searchKey})}
           />
         </View>
         <View style={styles.slider}>
