@@ -1,12 +1,47 @@
 {
+	"agcgw_all":{
+		"CN":"connect-drcn.dbankcloud.cn",
+		"CN_back":"connect-drcn.hispace.hicloud.com",
+		"DE":"connect-dre.dbankcloud.cn",
+		"DE_back":"connect-dre.hispace.hicloud.com",
+		"RU":"connect-drru.dbankcloud.cn",
+		"RU_back":"connect-drru.hispace.hicloud.com",
+		"SG":"connect-dra.dbankcloud.cn",
+		"SG_back":"connect-dra.hispace.hicloud.com"
+	},
 	"client":{
 		"cp_id":"70020000000206282",
 		"product_id":"736430079244685372",
 		"client_id":"485170066803917824",
 		"client_secret":"64C8197E732430416A163E7BAD211CAEBFAEE71844CEF0CDFDA4C3991E9BB374",
+		"project_id":"736430079244685372",
 		"app_id":"103175921",
-		"package_name":"com.serinc",
-		"api_key":"CgB6e3x9tHR0mW49yWucPb6WNFVpYn6SwgxlLebqODm86I/W7GhHP6pDxCcRFCgodWw8V3GKKXi4nCd/8b1hA0qd"
+		"api_key":"CgB6e3x9tHR0mW49yWucPb6WNFVpYn6SwgxlLebqODm86I/W7GhHP6pDxCcRFCgodWw8V3GKKXi4nCd/8b1hA0qd",
+		"package_name":"com.serinc"
 	},
-	"configuration_version":"1.0"
+	"oauth_client":{
+		"client_id":"103175921",
+		"client_type":1
+	},
+	"app_info":{
+		"app_id":"103175921",
+		"package_name":"com.serinc"
+	},
+	"configuration_version":"3.0",
+	"appInfos":[
+		{
+			"package_name":"com.serinc",
+			"client":{
+				"app_id":"103175921"
+			},
+			"app_info":{
+				"package_name":"com.serinc",
+				"app_id":"103175921"
+			},
+			"oauth_client":{
+				"client_type":1,
+				"client_id":"103175921"
+			}
+		}
+	]
 }
