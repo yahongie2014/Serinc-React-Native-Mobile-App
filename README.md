@@ -49,8 +49,8 @@ Preview the example live on [GITHUB](https://github.com/Serionline/Serinc-V2/) :
 
 ## #License By:
 
-####
+Buy Coffe For Me [☕](https://www.buymeacoffee.com/coder799)
 
-$ Follow ME
+####
 
 > Developed & Published by Dev Ahmed S. Ahmed [coder79](https://coder79.online/) ❤
