@@ -73,7 +73,7 @@ class SingleBlog extends Component {
           style={styles.ImagePreview}
           resizeMode="cover"
           source={{
-            uri: 'http://hardcoregify.com/content/2018/01/porn-gif_001-1.gif',
+            uri: 'https://c.tenor.com/tbAlzAsBICsAAAAC/funny-laughing.gif',
           }}
         />
       </Lightbox>
